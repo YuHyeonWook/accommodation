@@ -34,7 +34,7 @@ const Resetpw = () => {
     };
 
     try {
-      const response = await axios.put(`${process.env.NEXT_PUBLIC_BACKEND_URL}/open-api/user/change-password`, payload);
+      const response = await axios.put(`${process.env.VITE_API_URL}/open-api/user/change-password`, payload);
       if (response.data.result_code === '200') {
         alert('패스워드가 정상적으로 변경되었습니다.');
         navigate('/signin');

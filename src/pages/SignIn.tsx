@@ -19,7 +19,7 @@ const SignIn = () => {
     };
 
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/open-api/user/login`, payload);
+      const response = await axios.post(`${process.env.VITE_API_URL}/open-api/user/login`, payload);
       if (response.data.result_code === '200') {
         alert('로그인 되었습니다');
         localStorage.setItem('accessToken', response.data.data.access_token);

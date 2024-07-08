@@ -31,15 +31,11 @@ const Mypage = () => {
       };
 
       try {
-        const response = await axios.put(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}api/user/my-page/change-phone-number`,
-          payload,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
+        const response = await axios.put(`${process.env.VITE_API_URL}api/user/my-page/change-phone-number`, payload, {
+          headers: {
+            Authorization: `Bearer ${token}`,
           },
-        );
+        });
         if (response.data.result_code === '200') {
           alert('정상적으로 변경되었습니다.');
           login({ ...user, phone_number: editPhoneNumber } as User);

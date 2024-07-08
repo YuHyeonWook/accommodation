@@ -49,7 +49,7 @@ const SignUp = () => {
     };
 
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/open-api/user/register`, payload);
+      const response = await axios.post(`${process.env.VITE_API_URL}/open-api/user/register`, payload);
       if (response.data.result_code === '201') {
         alert('회원가입이 정상적으로 처리되었습니다.');
         navigate('/signin');

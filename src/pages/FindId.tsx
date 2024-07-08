@@ -16,7 +16,7 @@ const FindId = () => {
   const handleSubmit = async () => {
     try {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/open-api/user/find-email/username/${username}/phone-number/${phoneNumber}`,
+        `${process.env.VITE_API_URL}/open-api/user/find-email/username/${username}/phone-number/${phoneNumber}`,
       );
       setEmail(response.data.data);
       setError('');

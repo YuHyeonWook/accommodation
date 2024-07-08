@@ -23,7 +23,7 @@ const Home = () => {
       const guest = query.get('guest') || '2';
 
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/open-api/accommodation`, {
+        const response = await axios.get(`${process.env.VITE_API_URL}/open-api/accommodation`, {
           params: { keyword, start, end, guest },
         });
         setAccommodationData(response.data.data.content);
