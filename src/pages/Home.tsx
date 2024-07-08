@@ -23,10 +23,9 @@ const Home = () => {
       const guest = query.get('guest') || '2';
 
       try {
-        const response = await axios.get(
-          'http://ec2-43-203-40-90.ap-northeast-2.compute.amazonaws.com/open-api/accommodation',
-          { params: { keyword, start, end, guest } },
-        );
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/open-api/accommodation`, {
+          params: { keyword, start, end, guest },
+        });
         setAccommodationData(response.data.data.content);
       } catch (error) {
         console.error('검색어 필터링 오류', error);

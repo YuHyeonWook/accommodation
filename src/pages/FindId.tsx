@@ -16,7 +16,7 @@ const FindId = () => {
   const handleSubmit = async () => {
     try {
       const response = await axios.get(
-        `http://ec2-43-203-40-90.ap-northeast-2.compute.amazonaws.com/open-api/user/find-email/username/${username}/phone-number/${phoneNumber}`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/open-api/user/find-email/username/${username}/phone-number/${phoneNumber}`,
       );
       setEmail(response.data.data);
       setError('');

@@ -19,10 +19,7 @@ const SignIn = () => {
     };
 
     try {
-      const response = await axios.post(
-        'http://ec2-43-203-40-90.ap-northeast-2.compute.amazonaws.com/open-api/user/login',
-        payload,
-      );
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/open-api/user/login`, payload);
       if (response.data.result_code === '200') {
         alert('로그인 되었습니다');
         localStorage.setItem('accessToken', response.data.data.access_token);

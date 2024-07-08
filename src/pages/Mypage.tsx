@@ -32,7 +32,7 @@ const Mypage = () => {
 
       try {
         const response = await axios.put(
-          'http://ec2-43-203-40-90.ap-northeast-2.compute.amazonaws.com/api/user/my-page/change-phone-number',
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}api/user/my-page/change-phone-number`,
           payload,
           {
             headers: {
